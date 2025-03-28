@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 0;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .user-card {
+            display: flex;
+            align-items: center;
+            width: 280px;
+            border: 3px solid black;
+            padding: 10px;
+            background-color: #fff;
+            text-align: left;
+        }
+        .user-info {
+            flex-grow: 1;
+        }
+        .user-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ABC Colleges</h1>
+    <h2>Library Users</h2>
+
+    <div class="container" id="userContainer"></div>
+
+    <script>
+        function loadXML() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "mariabeatriz_guerreroBSIT3B.xml", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let xmlData = xhr.responseXML;
+                    displayUsers(xmlData);
+                }
+            };
+            xhr.send();
+        }
+
+        function displayUsers(xmlData) {
+            let users = xmlData.getElementsByTagName("user");
+            let container = document.getElementById("userContainer");
+
+            for (let i = 0; i < 10; i++) { // Ensure 10 cards are displayed
+                let picture = users[i].getElementsByTagName("picture")[0].textContent;
+                let name = users[i].getElementsByTagName("name")[0].textContent;
+                let course = users[i].getElementsByTagName("course")[0].textContent;
+                let year_section = users[i].getElementsByTagName("year_section")[0].textContent;
+                let adviser = users[i].getElementsByTagName("adviser")[0].textContent;
+                let school_year = users[i].getElementsByTagName("school_year")[0].textContent;
+
+                let userCard = document.createElement("div");
+                userCard.classList.add("user-card");
+                userCard.innerHTML = `
+                    <div class="user-info">
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Course:</strong> ${course}</p>
+                        <p><strong>Year Level / Section:</strong> ${year_section}</p>
+                        <p><strong>Adviser:</strong> ${adviser}</p>
+                        <p><strong>School Year:</strong> ${school_year}</p>
+                    </div>
+                    <img src="${picture}" alt="Student Picture">
+                `;
+                container.appendChild(userCard);
+            }
+        }
+
+        window.onload = loadXML;
+    </script>
+
+</body>
+</html>
