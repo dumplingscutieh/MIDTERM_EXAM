@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
 <library_users>
     <user>
-        <picture>images/picture.png</picture>
+        <picture>images/picture.jpg</picture>
         <name>Juan Dela Cruz</name>
         <course>BSIT</course>
         <year_section>3bg2</year_section>
@@ -9,7 +10,7 @@
         <school_year>2025-2026</school_year>
     </user>
     <user>
-        <picture>images/picture.png</picture>
+        <picture>images/picture.jpg</picture>
         <name>Juan Dela Cruz</name>
         <course>BSIT</course>
         <year_section>3bg2</year_section>
@@ -17,7 +18,16 @@
         <school_year>2025-2026</school_year>
     </user>
     <user>
-        <picture>images/picture.png</picture>
+      <picture>images/picture.jpg</picture>
+        <name>Juan Dela Cruz</name>
+        <course>BSIT</course>
+        <year_section>3bg2</year_section>
+        <adviser>Mr. Ramon Dela Cruz</adviser>
+        <school_year>2025-2026</school_year>
+        <picture><images/>
+  </user>
+    <user>
+        <picture>images/picture.jpg</picture>
         <name>Juan Dela Cruz</name>
         <course>BSIT</course>
         <year_section>3bg2</year_section>
@@ -25,7 +35,7 @@
         <school_year>2025-2026</school_year>
     </user>
     <user>
-        <picture>images/picture.png</picture>
+        <picture>images/picture.jpg</picture>
         <name>Juan Dela Cruz</name>
         <course>BSIT</course>
         <year_section>3bg2</year_section>
@@ -33,15 +43,7 @@
         <school_year>2025-2026</school_year>
     </user>
     <user>
-        <picture>images/picture.png</picture>
-        <name>Juan Dela Cruz</name>
-        <course>BSIT</course>
-        <year_section>3bg2</year_section>
-        <adviser>Mr. Ramon Dela Cruz</adviser>
-        <school_year>2025-2026</school_year>
-    </user>
-    <user>
-        <picture>images/picture.png</picture>
+        <picture>images/picture.jpg</picture>
         <name>Juan Dela Cruz</name>
         <course>BSIT</course>
         <year_section>3bg2</year_section>
